@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/schedule_db
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
