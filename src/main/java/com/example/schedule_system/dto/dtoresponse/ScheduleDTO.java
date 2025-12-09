@@ -3,6 +3,8 @@ package com.example.schedule_system.dto.dtoresponse;
 import com.example.schedule_system.dto.smalldto.GroupView;
 import com.example.schedule_system.dto.smalldto.SubjectView;
 import com.example.schedule_system.dto.smalldto.TeacherView;
+import com.example.schedule_system.model.Weekday;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -15,5 +17,5 @@ public class ScheduleDTO {
     private final TeacherView teacherView;
     private final Integer pairNumber;
     private final String shift;
-    private final String weekday;
+    private final Weekday weekday;
 }
