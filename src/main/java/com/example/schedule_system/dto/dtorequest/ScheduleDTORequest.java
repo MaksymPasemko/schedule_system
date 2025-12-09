@@ -5,10 +5,12 @@ import com.example.schedule_system.model.Weekday;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 public class ScheduleDTORequest {
     private Long id;
     private Long groupId;

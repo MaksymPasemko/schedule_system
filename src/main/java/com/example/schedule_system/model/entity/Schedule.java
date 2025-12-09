@@ -36,7 +36,8 @@ public class Schedule {
     @NotBlank
     private String shift;
     @Column(name = "weekday",nullable = false)
-    @NotBlank
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private Weekday weekday;
 
 }
