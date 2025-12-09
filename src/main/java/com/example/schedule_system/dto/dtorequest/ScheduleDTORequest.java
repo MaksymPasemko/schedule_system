@@ -2,17 +2,19 @@ package com.example.schedule_system.dto.dtorequest;
 
 import com.example.schedule_system.model.Weekday;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class ScheduleDTORequest {
-    private final Long id;
-    private final Long groupId;
-    private final Long subjectId;
-    private final Long teacherId;
-    private final Integer pairNumber;
-    private final String shift;
-    private final Weekday weekday;
+    private Long id;
+    private Long groupId;
+    private Long subjectId;
+    private Long teacherId;
+    private Integer pairNumber;
+    private String shift;
+    private Weekday weekday;
 }

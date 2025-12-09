@@ -1,11 +1,7 @@
 package com.example.schedule_system.controller;
 
-import com.example.schedule_system.dto.dtorequest.GroupDTORequest;
 import com.example.schedule_system.dto.dtorequest.SubjectDTORequest;
-import com.example.schedule_system.dto.dtoresponse.GroupDTO;
 import com.example.schedule_system.dto.dtoresponse.SubjectDTO;
-import com.example.schedule_system.model.entity.Subject;
-import com.example.schedule_system.service.GroupService;
 import com.example.schedule_system.service.SubjectService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,12 +11,13 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/subject")
 public class SubjectController {
     private final SubjectService subjectService;
 
     @PostMapping
     public ResponseEntity<SubjectDTO> createSubject(@RequestBody SubjectDTORequest subjectDTORequest){
-        final SubjectDTO subjectDTO = subjectService.createGroup(subjectDTORequest);
+        final SubjectDTO subjectDTO = subjectService.createSubject(subjectDTORequest);
         return ResponseEntity.ok(subjectDTO);
     }
 
@@ -49,7 +46,7 @@ public class SubjectController {
     }
 
     @DeleteMapping("/id/{id}")
-    public ResponseEntity<Void> deleteGroupById(@PathVariable Long id){
+    public ResponseEntity<Void> deleteSubjectById(@PathVariable Long id){
         final boolean isDeleted = subjectService.deleteSubjectById(id);
         return isDeleted
                 ? ResponseEntity.ok().build()
@@ -57,7 +54,7 @@ public class SubjectController {
     }
 
     @DeleteMapping("/name/{name}")
-    public ResponseEntity<Void> deleteGroupBySubject(@PathVariable String name){
+    public ResponseEntity<Void> deleteSubjectByName(@PathVariable String name){
         final boolean isDeleted = subjectService.deleteSubjectByName(name);
         return isDeleted
                 ? ResponseEntity.ok().build()

@@ -1,14 +1,9 @@
 package com.example.schedule_system.service;
 
-
-import com.example.schedule_system.dto.dtorequest.GroupDTORequest;
 import com.example.schedule_system.dto.dtorequest.SubjectDTORequest;
-import com.example.schedule_system.dto.dtoresponse.GroupDTO;
 import com.example.schedule_system.dto.dtoresponse.SubjectDTO;
-import com.example.schedule_system.model.entity.Group;
 import com.example.schedule_system.model.entity.Subject;
 import com.example.schedule_system.repository.SubjectRepository;
-import com.example.schedule_system.util.mapper.GroupMapper;
 import com.example.schedule_system.util.mapper.SubjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -24,7 +19,7 @@ import static com.example.schedule_system.util.mapper.SubjectMapper.convertSubje
 public class SubjectService {
     private final SubjectRepository subjectRepository;
 
-    public SubjectDTO createGroup(SubjectDTORequest subjectDTORequest){
+    public SubjectDTO createSubject(SubjectDTORequest subjectDTORequest){
         final Subject subject = new Subject();
         subject.setName(subjectDTORequest.getName());
         subject.setCreatedAt(subjectDTORequest.getCreatedAt());
